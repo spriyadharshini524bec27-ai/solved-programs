@@ -1,0 +1,10 @@
+time = input("Enter time (e.g., 07:05:45PM): ").strip()
+hh = int(time[:2])
+mmss = time[2:8]
+ampm = time[-2:].upper()
+
+if ampm == "PM" and hh != 12:
+    hh += 12
+elif ampm == "AM" and hh == 12:
+    hh = 0
+print(f"Military Time: {hh:02d}{mmss}")
