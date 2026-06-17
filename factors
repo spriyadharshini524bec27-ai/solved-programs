@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        int number = in.nextInt();
+        if (number == 0) {
+            System.out.println("No Factors");
+            return; 
+        }
+        if (number < 0) {
+            number = Math.abs(number);
+        }
+        System.out.print("Factors are: ");
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
