@@ -1,0 +1,14 @@
+s1 = input("Enter the first string (S1): ")
+s2 = input("Enter the second string (S2): ")
+
+i = 0  
+j = 0 
+while i < len(s1) and j < len(s2):
+    if s1[i] == s2[j]:
+        i = i + 1
+    
+    j = j + 1
+if i == len(s1):
+    print("True")
+else:
+    print("False")
