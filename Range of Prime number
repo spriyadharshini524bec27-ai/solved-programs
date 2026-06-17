@@ -1,0 +1,15 @@
+start=int(input("enter the start range:"))
+end=int(input("enter the end range:"))
+def prime(number):
+    if number<2:
+        return False
+    for i in range(2,number):
+        if number%i==0:
+            return False
+    return True
+    
+for i in range(start,end+1):
+    if prime(i):
+        print(i)
+    
+            
