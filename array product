@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		int n;
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the size:");
+		n=in.nextInt();
+		int[] array;
+		array = new int[n];
+		int [] result=new int[n];
+		for(int i=0;i<n;i++){
+		    array[i]=in.nextInt();
+		}
+		for(int i=0;i<n;i++){
+		    int current=1;
+		    for(int j=0;j<n;j++){
+		        if(i!=j){
+		            current*=array[j];		       
+		            }
+		    }
+		
+		result[i]=current;
+		}
+		for(int i=0;i<n;i++){
+		    System.out.print(result[i]+" ");
+		}
+		
+	}
+}
