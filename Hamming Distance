@@ -1,0 +1,21 @@
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		int number1,number2,result;
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the two numbers:");
+		number1=in.nextInt();
+		number2=in.nextInt();
+		result=number1^number2;
+		int count=0;
+		while(result>0){
+		    if(result%2==1){
+		        count=count+1;
+		    }
+		    result=result/2;
+		}
+		System.out.println(count);
+}
+}
