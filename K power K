@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		System.out.println("Enter the n value");
+		int n=in.nextInt();
+		int d,k=0,temp;
+		d=(int)Math.floor(Math.sqrt(n));
+		for(int i=2;i<=d;i++){
+		    temp=(int)(n-Math.pow(d,2));
+		    for(int j=2;j<i;j++){
+		        if ((int) Math.pow(j,j)==temp){
+		            k=1;
+		            break;
+		        }
+		    }
+		    
+		}
+		if(k==1){
+		    System.out.println("It is possible");
+		}
+		else{
+		    System.out.println("It is not possible");
+		}
+		
+	}
+}
