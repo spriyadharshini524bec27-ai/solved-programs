@@ -1,0 +1,38 @@
+import java.util.*;
+class complex{
+    int real;
+    int imag;
+    complex(int r,int img){
+        real=r;
+        imag=img;
+    }
+    complex(){
+        real=0;imag=0;
+    }
+    public complex add(complex c){
+        //return (new complex(real+c.real,img+c.img));
+        complex res=new complex();
+        res.real=this.real+c.real;
+        res.imag=this.imag+c.imag;
+        return res;
+        
+    }
+    public void display(){
+        System.out.println(real+"+i"+imag);
+    }
+      public complex multiply(complex c) {
+        complex res = new complex();
+        res.real = (this.real * c.real) - (this.imag * c.imag);
+        res.imag = (this.real * c.imag) + (this.imag * c.real);
+        return res;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        complex c1=new complex(12,12);
+        complex c2=new complex(1,2);
+        complex c3 = new complex();
+        c3=c1.multiply(c2);
+        c3.display();
+    }
+}
