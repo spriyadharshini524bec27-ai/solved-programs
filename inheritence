@@ -1,0 +1,70 @@
+import java.util.*;
+class employee {
+    String name;
+    int empid;
+    
+    public employee(String name, int empid) {
+        this.name = name;
+        this.empid = empid;
+    }
+    
+    public void printbase() {
+        System.out.println("Name: " + name);
+        System.out.println("Employee Id: " + empid);
+    }
+}
+
+class fulltime extends employee {
+    double salary;
+    
+    public fulltime(String name, int empid, double salary) {
+        super(name, empid);
+        this.salary = salary;
+    }
+    
+    public void printsalary() {
+        System.out.println("Monthly salary: " + salary);
+    }
+}
+
+
+class manager extends fulltime {
+    double bonus;
+    
+    public manager(String name, int empid, double salary, double bonus) {
+        super(name, empid, salary);
+        this.bonus = bonus;
+    }
+    
+    public void printbonus() {
+        System.out.println("Bonus: " + bonus);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("--- Enter Employee Details ---");
+        
+        System.out.print("Enter Full Name: ");
+        String inputName = input.nextLine(); 
+        
+        System.out.print("Enter Employee ID: ");
+        int inputId = input.nextInt();  
+        
+        System.out.print("Enter Monthly Salary: ");
+        double inputSalary = input.nextDouble(); 
+        
+        System.out.print("Enter Team Bonus: ");
+        double inputBonus = input.nextDouble();  
+
+        System.out.println("\n--- Processing Payroll ---");
+
+        
+        manager mgr = new manager(inputName, inputId, inputSalary, inputBonus);
+        
+        mgr.printbase();   
+        mgr.printsalary(); 
+        mgr.printbonus();  
+    }
+}
